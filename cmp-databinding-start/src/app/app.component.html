@@ -3,7 +3,9 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor='let serverElement of serverElements'></app-server-element>
+      <app-server-element *ngFor='let serverElement of serverElements'
+      [srvElement]="serverElement"></app-server-element> 
+      <!-- this [element] is the name of the proprety in server-element.ts, (latter a change to srvElement, and put a alias in @input of server-element-component)  value is the father component variable -->
     </div>
   </div>
 </div>
