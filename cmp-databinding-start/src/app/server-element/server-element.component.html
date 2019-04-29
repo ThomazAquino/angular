@@ -4,6 +4,9 @@
     <p>
       <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
       <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+      <ng-content></ng-content>
+      <!-- this is a hook to html btween the html tah of this component -->
+
     </p>
   </div>
 </div>

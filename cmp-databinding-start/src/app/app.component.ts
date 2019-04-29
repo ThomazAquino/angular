@@ -7,13 +7,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   serverElements = [
-  { type: 'server', name: 'TestServer', content: 'Just a test!!'},
-  { type: 'server', name: 'TestsssServer', content: 'Jsdsdsdsdsdssds'},
-  { type: 'server', name: 'TestServer', content: 'Just a test!!'}
+  { type: 'server', name: 'First Server', content: 'Just the first'},
+  { type: 'server', name: 'Second', content: 'Second .. '}
   ];
 
+  meuTeste = function () {
+    console.log('fucntion test!!!!e');
+  }
+
   ngOnInit() {
-    console.log('teste');
+    //fifeCicle Hook
+  }
+
+  onServerAdded(serverData: {serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+
+  onBlueprintAdded(bluePrintData: {serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: bluePrintData.serverName,
+      content: bluePrintData.serverContent
+    });
+  }
+
+  funcaoPai() {
+    alert('Works!!!')
+  }
+
+  funcaoPaiParametros(parametro) {
+    alert('funcaoPaiParametros --> ' + parametro.titulo);
+    console.log(parametro)
+  }
+
+  onChangeFirst() {
+    
   }
 
 }

@@ -1,11 +1,20 @@
 <div class="container">
-  <app-cockpit></app-cockpit>
+  <app-cockpit 
+  (serveCredted)="onServerAdded($event)"
+  (bpCreated)="onBlueprintAdded($event)"
+  (variavelFilho)="funcaoPai()"
+  (variavelFilhoParametros)="funcaoPaiParametros($event)"
+  ></app-cockpit>
+  <!-- Como um (click)="function, mas o nosso click é a variavel emitter -->
+  <!-- listen to event, and when serve was created  -->
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn" (click)="onChangeFirst()">change forst element</button>
       <app-server-element *ngFor='let serverElement of serverElements'
-      [srvElement]="serverElement"></app-server-element> 
-      <!-- this [element] is the name of the proprety in server-element.ts, (latter a change to srvElement, and put a alias in @input of server-element-component)  value is the father component variable -->
+      [srvElement]="serverElement" [export]="meuTeste"></app-server-element> 
+      <!-- this [element] is the name of the proprety in server-element.ts, (latter I change to srvElement, and put a alias in @input of server-element-component)  value is the father component variable -->
+      <!-- [newVariableToAcessOutside]="ExistedVariableFromThisComponent" -->
     </div>
   </div>
 </div>
